@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Tendai Chikake">
+
+        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="favicon" href="img/favicon.png">
+        <title></title>
+        <!--[if lte IE 8]>
+            <script src="js/excanvas.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+    </head>
+
+    <body>
+
+        <div class="modal fade errorBox" id="errorBox" tabindex="-1" role="dialog" aria-labelledby="errorBox" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content card">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="errorBox-header"></h4>
+                    </div>
+                    <div class="modal-body" id="errorBox-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-sm-12">
+                            <button type="button" id="close-btn-var-color" class="btn btn-primary btn-danger" data-dismiss="modal" aria-label="Close">
+                            Закрыть
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <nav class="navbar fixed-top navbar-light bg-jay border border-primary border-left-0 border-right-0 border-top-0 p-3">
+                <div  id="window-app-titlebar">
+                    <div class="appname p-0 m-0"></div>
+                    <div class="window-action-buttons">
+                        
+                        <div class="window-action-minimize">
+                            <a class="window-action-minimizebutton" id="window-action-minimizebutton">
+                                    &ndash;
+                            </a>
+                        </div>
+                        <div class="window-action-zoom">
+                            <a class="window-action-zoombutton" id="window-action-zoombutton">
+                                +
+                            </a>
+                        </div>
+                        <div class="window-action-close">
+                            <a class="window-action-closebutton" id="window-action-closebutton">
+                                    x
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+    
+            <div class="container-fluid pt-5">
+                <div class="sidenav-left border border-dark border-left-0 border-top-0 border-bottom-0">
+                    
+                </div>
+                <!-- Main Content -->
+                <div class="main p-3 border border-left-0 border-top-0 border-bottom-0">                     
+                    <div class="row m-0 mb-2">
+                        <h4 class="col-12 p-0">
+                            <span class="international en"></span>
+                            <span class="international ru"></span>
+                            Заказ на складе
+                        </h4>                                                
+                    </div> 
+                    <div class="col-12 container-x">
+                        <div class="main-view row"> 
+                            <div class="col-12 mb-3">
+                                Номер заказа: <span class="order-number h5"></span>
+                                <span class="pull-right order-date">
+
+                                </span>
+                            </div>
+                            <div class="col-3 border border-primary border-left-0 border-right-0 border-top-0 mb-3">
+                                наименование товара
+                            </div>
+                            <div class="col-3 border border-primary border-left-0 border-right-0 border-top-0 mb-3">
+                                кол.
+                            </div>
+                            <div class="col-3 border border-primary border-left-0 border-right-0 border-top-0 mb-3">
+                                цена
+                            </div>
+                            <div class="col-3 border border-primary border-left-0 border-right-0 border-top-0 mb-3">
+                                всего
+                            </div>
+                            <div class="col-3 order-item">
+                                
+                            </div>
+                            <div class="col-3 order-quantity">
+                                
+                            </div>
+                            <div class="col-3 order-price">
+                                
+                            </div>
+                            <div class="col-3 order-total">
+                                
+                            </div>
+                            <div class="col-12 mt-3 mb-3 row">
+                                <h5 class="col-12">
+                                    Покупатель:
+                                </h5>
+                                <div class="col-3">
+                                    ФИО
+                                </div>
+                                <div class="col-9 order-client">
+
+                                </div>
+                                <div class="col-3">
+                                    Адрес
+                                </div>
+                                <div class="col-9 order-address">
+
+                                </div>
+                                <div class="col-3">
+                                    Контакт
+                                </div>
+                                <div class="col-9 order-contact">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="col-12 control-messages"> 
+                                </div>
+                                <div class="input-group mt-3 mb-3">
+                                    <input class="form-control tracker-id" type="text" placeholder="трекер курьера" name="tracker-id">
+                                </div>
+                                <button class="btn btn-danger">
+                                    отменить заказ
+                                </button>
+                                <button class="btn btn-success pull-right send-to-customer">
+                                    отправить заказ
+                                </button>
+                            </div>
+                        </div>
+                    </div>                                
+                </div>
+                <div class="sidenav-right pr-2 pl-0">
+                                    
+                    <div class="orders-list nav-right m-0 mt-3 pt-2">
+                        
+                    </div> 
+                </div>                
+            </div>
+            <nav class="navbar fixed-bottom navbar-light bg-jay border border-left-0 border-right-0 border-bottom-0">
+                <div class="col-12">
+                    <div class="col-12 copyright text-center">
+                    </div>
+                </div>
+            </nav>
+    
+
+
+
+        <script type="text/javascript" src="libs/jquery.min.js"></script>
+        <script type="text/javascript" src="libs/popper.min.js"></script>
+        <script type="text/javascript" src="libs/bootstrap.min.js"></script>
+        <script type="text/javascript" src="libs/functions.js"></script>
+        <script type="text/javascript" src="libs/storage.js"></script>
+
+        <script type="text/javascript" src="libs/app.js"></script>
+        <script type="text/javascript" src="libs/navigation.js"></script>
+
+        <script type="text/javascript" src="js/order.js"></script>
+        <script type="text/javascript" src="js/wharehouse.js"></script>
+    </body>
+</html>

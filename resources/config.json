@@ -1,0 +1,21 @@
+{
+    "REST":{
+        "url":"localhost",
+        "port":"7070",
+        "refreshrate":"5"
+    },
+    "ORDERS" : {
+        "statuses" : [
+            {
+                "key" : "delivered",
+                "value" : "доставлена"
+            },{
+                "key" : "return",
+                "value" : "возврата"
+            },{
+                "key" : "lost",
+                "value" : "потерян"
+            }
+        ]
+    }
+}
