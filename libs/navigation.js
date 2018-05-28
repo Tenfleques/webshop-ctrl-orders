@@ -22,15 +22,14 @@ $(function(){
         }
     ];
     var html = "";
-    navLinks.map(function(val){
-        
+    navLinks.map(function(val){        
         html += navBuilder(val);
     })
     $(".sidenav-left").html(html);
     function navBuilder(navObject){
         var html = "";
-        var active = (window.location.pathname == "/"+navObject["link"]) && "text-primary bg-white";
-        html += '<a href="'+navObject["link"]+'" class="nav-link col-12 mb-3 pl-1 '+active+'">';
+        var active = (window.location.pathname == "/"+navObject["link"]) && "text-primary";
+        html += '<a href="'+navObject["link"]+'" class="nav-link col-12 pb-3 pl-2 '+active+'">';
         //html +=    '<i class="fa '+navObject["fa"]+'"></i>';
         html += navObject["caption"];
         html += '</a>'

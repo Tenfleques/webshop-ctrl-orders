@@ -29,11 +29,13 @@ $(function(){
     let orders = storage.get(COURIER_KEY).map(a => new Order(a.value));
     var index = 0;
     writeOrder(orders[index]);
+    showActiveOrder(index);
     $(".orders-list")
     .html(listOrders(orders))
     .on("click",".show-order", function(e){
         e.preventDefault();
         index = $(this).attr("href").replace("#","");
+        showActiveOrder(index);
         writeOrder(orders[index]);
     });
 
@@ -59,6 +61,7 @@ $(function(){
         orders.splice(index,1);                
         index = new ctrlIndex(index,orders).inc();
         writeOrder(orders[index]);
-        $(".orders-list").html(listOrders(orders)); 
+        $(".orders-list").html(listOrders(orders));
+        showActiveOrder(index); 
     });
 })

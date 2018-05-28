@@ -11,7 +11,9 @@ $(function(){
         e.preventDefault();
         index = $(this).attr("href").replace("#","");
         writeOrder(orders[index]);
+        showActiveOrder(index);
     });
+    showActiveOrder(index);
 
     $(".send-to-customer").on("click",function(e){
         e.preventDefault();
@@ -40,6 +42,7 @@ $(function(){
                 index = new ctrlIndex(index,orders).inc();
                 writeOrder(orders[index]);
                 $(".orders-list").html(listOrders(orders))
+                showActiveOrder(index);
             }
         }
     });

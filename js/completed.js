@@ -50,12 +50,14 @@ $(function(){
 
         var index = 0;
         writeOrder(orders[index]);
+        showActiveOrder(index);
         $(".orders-list")
         .html(listOrders(orders))
         .on("click",".show-order", function(e){
             e.preventDefault();
             index = $(this).attr("href").replace("#","");
             writeOrder(orders[index]);
+            showActiveOrder(index);
         });
     } 
     var dateErrorTimeout;

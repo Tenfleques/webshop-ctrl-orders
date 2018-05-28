@@ -69,10 +69,17 @@ function Order(){
   }
 function listOrders(){
     let orders = arguments[0];
+    let active = "bg-primary text-white";
     let html = orders.map((a,i) => {
-        return "<a href='#"+i+"' id='order_num_"+i+"' class='card p-1 m-2 show-order'>"+a.getInvoiceNumber() + " " + a.getTracker() +"<a>";
+        let html = "<a href='#"+i+"' id='order_num_"+i+"' class='card p-1 m-2 show-order "+active+"'>"+a.getInvoiceNumber() + " " + a.getTracker() +"<a>";
+        active = "";
+        return html;
     }).join("");
     return html;
+}
+function showActiveOrder(index){
+    $(".orders-list > a").removeClass("bg-primary text-white");
+    $("a#order_num_"+index).addClass("bg-primary text-white");
 }
 function writeOrder(){
     if(!arguments[0]){

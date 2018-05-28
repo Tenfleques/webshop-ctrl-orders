@@ -220,6 +220,9 @@ a.filter-stat.active{
 .bg-yellow{
   background: #FFFFCC;
 }
+.show-order:hover{
+  text-decoration: none;
+}
 /*.form-control:focus {
   color: #495057;
   border-color: transparent;

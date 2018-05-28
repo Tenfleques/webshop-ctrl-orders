@@ -16,12 +16,14 @@ var orders = orderList.map(a => {
 $(function() {
   var index = 0;
   writeOrder(orders[index]);
+  showActiveOrder(index);
   $(".orders-list")
     .html(listOrders(orders))
     .on("click",".show-order", function(e){
       e.preventDefault();
       index = $(this).attr("href").replace("#","");
       writeOrder(orders[index]);
+      showActiveOrder(index);
   });
   $(".send-to-dispatch").on("click",function(e){
     if (orders.length < 1){
@@ -35,5 +37,6 @@ $(function() {
     index = new ctrlIndex(index,orders).inc();
     writeOrder(orders[index]);
     $(".orders-list").html(listOrders(orders))
+    showActiveOrder(index);
   });
 });
